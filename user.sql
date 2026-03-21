@@ -1,0 +1,10 @@
+CREATE TABLE `user_info` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '用户主键ID',
+  `username` VARCHAR(50) NOT NULL UNIQUE COMMENT '用户名（唯一，用于登录）',
+  `password` VARCHAR(255) NOT NULL COMMENT '密码（加密存储，禁止明文）',
+  `nickname` VARCHAR(50) DEFAULT NULL COMMENT '用户昵称',
+  `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '注册时间',
+  `update_time` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
