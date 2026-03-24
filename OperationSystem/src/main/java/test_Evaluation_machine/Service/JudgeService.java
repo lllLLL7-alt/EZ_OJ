@@ -56,9 +56,6 @@ public class JudgeService {
         String finalOutput = record.getJudgeMessage() + "\n\n===== 星火Ultra AI代码分析 =====\n" + aiAnalysis;
         response.setOutput(finalOutput);
         // ==================================================
-
-
-       // response.setOutput(record.getJudgeMessage());
         return response;
     }
 
